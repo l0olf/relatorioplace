@@ -1,0 +1,2055 @@
+/* =========================================
+   VARIÁVEIS GLOBAIS (PALETA PREMIUM)
+========================================= */
+:root {
+    --bg-color: #F8F6F0;
+    --text-dark: #1E1A18;
+    --primary-brown: #5C4334;
+    --accent-orange: #E29578;
+    --white: #FFFFFF;
+    
+    --font-title: 'Lora', serif;
+    --font-body: 'Montserrat', sans-serif;
+}
+
+/* =========================================
+   RESET GLOBAL
+========================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #12100F; 
+    font-family: var(--font-body);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden; 
+}
+
+/* =========================================
+   WRAPPER & CONTAINER DE SLIDES
+========================================= */
+.presentation-wrapper {
+    position: relative;
+    width: 100vw;
+    height: 56.25vw; 
+    max-height: 100vh;
+    max-width: 177.78vh; 
+    background-color: var(--bg-color);
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.slides-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Cada section será um slide */
+section.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Padding responsivo: encolhe e estica com a tela */
+    padding: clamp(2rem, 5vh, 4rem) clamp(3rem, 6vw, 6rem);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(0.98); 
+    transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s;
+    background-color: var(--bg-color);
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+section.slide.active {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    z-index: 10;
+}
+
+/* =========================================
+   TIPOGRAFIA BASE & CONTROLES
+========================================= */
+h1, h2, h3, h4 {
+    font-family: var(--font-title);
+    color: var(--primary-brown);
+    font-weight: 500;
+}
+
+p, span, li {
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+.slider-controls {
+    position: absolute;
+    bottom: clamp(1.5rem, 3vh, 2.5rem);
+    right: clamp(2rem, 4vw, 4rem);
+    display: flex;
+    gap: 1rem;
+    z-index: 100;
+}
+
+.nav-btn {
+    background: transparent;
+    border: 1px solid var(--primary-brown);
+    color: var(--primary-brown);
+    width: clamp(35px, 3vw, 45px);
+    height: clamp(35px, 3vw, 45px);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: clamp(1rem, 1.2vw, 1.4rem);
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: var(--primary-brown);
+    color: var(--white);
+    transform: translateX(3px);
+}
+
+#prev-btn:hover { transform: translateX(-3px); }
+
+.presentation-footer {
+    position: absolute;
+    bottom: clamp(1.5rem, 3vh, 2.5rem);
+    left: clamp(2rem, 4vw, 4rem);
+    z-index: 50;
+}
+
+.footer-brand {
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: clamp(0.8rem, 0.9vw, 1rem);
+    letter-spacing: 2px;
+    color: var(--primary-brown);
+    opacity: 0.7;
+}
+
+.slide-progress {
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 4px;
+    background: rgba(92, 67, 52, 0.1);
+    z-index: 100;
+}
+
+.slide-progress-bar {
+    height: 100%; width: 0%;
+    background: var(--accent-orange);
+    transition: width 0.5s ease;
+}
+
+/* =========================================
+   SLIDE 1: CAPA (RESPONSIVA)
+========================================= */
+.slide-dark {
+    background-color: #12100F !important; 
+    color: var(--bg-color); 
+}
+
+.glow-effect {
+    position: absolute;
+    width: clamp(500px, 45vw, 900px);
+    height: clamp(500px, 45vw, 900px);
+    background: radial-gradient(circle, rgba(226, 149, 120, 0.06) 0%, rgba(18, 16, 15, 0) 70%);
+    top: -25%; right: -10%;
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.cover-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%; height: 100%;
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.brand-header {
+    display: flex; flex-direction: column;
+    margin-bottom: auto; 
+}
+
+.brand-name {
+    font-family: var(--font-body);
+    font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+    font-weight: 700;
+    letter-spacing: 5px;
+    color: var(--accent-orange);
+}
+
+.brand-tagline {
+    font-family: var(--font-body);
+    font-size: clamp(0.7rem, 0.8vw, 0.9rem);
+    font-weight: 300;
+    letter-spacing: 2px;
+    color: rgba(248, 246, 240, 0.5); 
+    text-transform: uppercase;
+    margin-top: 0.3rem;
+}
+
+.main-titles {
+    display: flex; flex-direction: column;
+    gap: clamp(1.2rem, 2vw, 2.5rem);
+}
+
+.cover-title {
+    font-family: var(--font-title);
+    font-size: clamp(2.5rem, 3.8vw, 4.5rem); 
+    font-weight: 400;
+    line-height: 1.15;
+    color: var(--white); 
+    max-width: 95%;
+}
+
+.decorative-line {
+    width: clamp(60px, 5vw, 100px);
+    height: 3px;
+    background-color: var(--accent-orange);
+    border-radius: 2px;
+}
+
+.cover-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1.1rem, 1.4vw, 1.6rem);
+    font-weight: 300;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 85%;
+}
+
+.cover-footer {
+    display: flex;
+    gap: clamp(1rem, 1.5vw, 2rem);
+    align-items: center;
+    margin-top: auto; 
+    padding-top: clamp(1.5rem, 2vh, 3rem);
+    border-top: 1px solid rgba(255, 255, 255, 0.05); 
+}
+
+.footer-badge {
+    display: flex; align-items: center;
+    gap: 0.6rem;
+    padding: clamp(0.4rem, 0.6vw, 0.6rem) clamp(1rem, 1.2vw, 1.5rem);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: clamp(0.75rem, 0.8vw, 0.9rem);
+    font-weight: 400;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.strategic-badge {
+    background: rgba(226, 149, 120, 0.1);
+    border-color: rgba(226, 149, 120, 0.3);
+    color: var(--accent-orange);
+}
+
+/* =========================================
+   TEXTOS E CABEÇALHO (CLASSES GLOBAIS)
+========================================= */
+
+/* Container geral do cabeçalho */
+.slide-header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: clamp(2rem, 5vh, 4rem); /* Responsivo vertical */
+    position: relative;
+    z-index: 2;
+}
+
+/* Utilitário para não empurrar elementos para baixo */
+.slide-header.no-margin-bottom {
+    margin-bottom: 0;
+}
+
+/* Rótulo superior (Ex: "Alinhamento estratégico") */
+.slide-label {
+    font-family: var(--font-body);
+    font-size: clamp(0.75rem, 0.9vw, 1rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: var(--accent-orange);
+    margin-bottom: clamp(0.5rem, 1vh, 1rem);
+}
+
+/* Título principal do slide */
+.slide-title {
+    font-family: var(--font-title);
+    font-size: clamp(2.2rem, 3.5vw, 4rem); /* Estica e encolhe com a tela */
+    color: var(--primary-brown);
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+/* Linha decorativa abaixo do título */
+.title-line {
+    width: clamp(60px, 6vw, 100px);
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-orange) 0%, rgba(226, 149, 120, 0.1) 100%);
+    margin: clamp(1rem, 2vh, 1.8rem) 0;
+    border-radius: 4px;
+}
+
+/* Subtítulo / Texto descritivo */
+.slide-subtitle {
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.3vw, 1.4rem);
+    color: var(--text-dark);
+    font-weight: 300;
+    max-width: 95%;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Destaque das palavras fortes no subtítulo */
+.slide-subtitle strong {
+    font-weight: 600;
+    color: var(--primary-brown);
+    background: linear-gradient(120deg, rgba(226, 149, 120, 0.15) 0%, rgba(255, 255, 255, 0) 100%);
+    padding: 0.1rem 0.3rem;
+    border-radius: 4px;
+}
+
+/* Marca d'água de fundo (Ícone gigante) */
+.watermark-icon {
+    position: absolute;
+    bottom: -10%;
+    right: -5%;
+    font-size: clamp(35rem, 50vw, 65rem); /* Escala de acordo com o monitor */
+    color: var(--primary-brown);
+    opacity: 0.03;
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* =========================================
+   CLASSES UTILITÁRIAS DE ALINHAMENTO
+========================================= */
+.text-center { text-align: center; }
+.mx-auto { margin-left: auto; margin-right: auto; }
+.align-center { align-items: center; }
+.justify-center { justify-content: center; }
+.flex-column { flex-direction: column; text-align: center; }
+
+/* Ajuste da marca d'água para slides centralizados */
+.watermark-center {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5%;
+    right: auto;
+}
+
+/* =========================================
+   LAYOUT LADO A LADO (SPLIT LAYOUT)
+========================================= */
+.split-layout {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(2rem, 4vw, 5rem); /* Espaço responsivo entre as colunas */
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+
+.split-left {
+    flex: 0 0 42%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.split-right {
+    flex: 0 0 54%;
+    display: flex;
+    align-items: center;
+}
+
+/* =========================================
+   SLIDE 2: GRID E CARTÕES RESPONSIVOS
+========================================= */
+.objectives-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: clamp(1rem, 2vw, 2.5rem); /* Espaçamento fluido */
+    width: 100%;
+}
+
+/* Estilo Premium dos Cartões */
+.objective-card {
+    background: var(--white);
+    border: 1px solid rgba(92, 67, 52, 0.06);
+    padding: clamp(1.5rem, 2vw, 3rem) clamp(1.5rem, 2vw, 2.5rem);
+    border-radius: clamp(12px, 1.5vw, 20px);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: clamp(1rem, 1.5vw, 1.5rem);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s ease;
+}
+
+.objective-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(92, 67, 52, 0.08);
+    border-color: rgba(226, 149, 120, 0.4);
+}
+
+/* Ícones dos Cartões */
+.card-icon {
+    width: clamp(45px, 4.5vw, 70px);
+    height: clamp(45px, 4.5vw, 70px);
+    background: rgba(226, 149, 120, 0.1);
+    color: var(--accent-orange);
+    border-radius: clamp(10px, 1vw, 16px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.5rem, 2vw, 2.5rem);
+    transition: all 0.4s ease;
+}
+
+.objective-card:hover .card-icon {
+    background: var(--accent-orange);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+/* Texto dos Cartões */
+.card-text {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.1vw, 1.25rem);
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+
+.card-text strong {
+    color: var(--primary-brown);
+    font-weight: 600;
+}
+/* =========================================
+   SLIDE 3: COMPARATIVO (RESPONSIVO E CENTRALIZADO)
+========================================= */
+
+/* Container base */
+.scenario-comparison {
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: clamp(1.5rem, 2vw, 3rem); /* Espaçamento fluido entre os cartões */
+    width: 100%;
+    max-width: clamp(900px, 85vw, 1200px);
+    margin: 0 auto;
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+
+/* Cartões Base - Centralizados e Responsivos */
+.data-card {
+    flex: 1;
+    background: var(--white);
+    border-radius: clamp(16px, 2vw, 24px);
+    padding: clamp(1.5rem, 2vw, 2.5rem) clamp(1.5rem, 2vw, 2rem); 
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    border: 1px solid rgba(92, 67, 52, 0.08);
+    height: fit-content;
+}
+
+/* Títulos e Badges */
+.card-badge {
+    display: block;
+    padding: clamp(0.3rem, 0.5vw, 0.4rem) clamp(1rem, 1.2vw, 1.5rem);
+    border-radius: 50px;
+    font-family: var(--font-body);
+    font-size: clamp(0.75rem, 0.8vw, 0.85rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: clamp(1rem, 1.5vw, 1.5rem);
+    width: fit-content;
+    background: rgba(92, 67, 52, 0.08);
+    color: var(--primary-brown);
+}
+
+.alert-badge {
+    background: rgba(220, 53, 69, 0.1); 
+    color: #DC3545; 
+}
+
+.data-card-title {
+    font-family: var(--font-title);
+    font-size: clamp(1.4rem, 1.6vw, 1.8rem); 
+    color: var(--primary-brown);
+    margin-bottom: clamp(1rem, 1.5vw, 1.5rem); 
+}
+
+/* --- LADO ESQUERDO: DADOS DO META (VERTICAL) --- */
+.stats-group-vertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: clamp(3rem, 3vw, 3rem);
+    margin-bottom: auto;
+}
+
+.stat-item {
+    display: flex;
+    gap: clamp(0.8rem, 1vw, 1.2rem);
+    text-align: left;
+    align-items: center;
+}
+
+.stat-number {
+    font-family: var(--font-body);
+    font-size: clamp(3rem, 3.8vw, 4.2rem); /* Números grandes fluidos */
+    font-weight: 700;
+    color: var(--primary-brown);
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+.highlight-good {
+    color: var(--accent-orange);
+}
+
+.stat-label {
+    font-family: var(--font-body);
+    font-size: clamp(0.9rem, 1vw, 1.05rem);
+    color: rgba(30, 26, 24, 0.6);
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+.stat-divider-horizontal {
+    width: 130%;
+    height: 2px;
+    background: rgba(92, 67, 52, 0.1);
+}
+
+/* Ícone central do VS */
+.vs-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(1.8rem, 2.5vw, 3rem);
+    color: rgba(92, 67, 52, 0.2);
+    padding: 0 clamp(0.5rem, 1vw, 1.5rem);
+    padding-bottom: 120px !important; /* Ajuste para centralizar verticalmente */
+}
+
+/* --- LADO DIREITO: IMPACTO NO FUNIL --- */
+.funnel-impact {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.6rem, 1vw, 1rem);
+    margin-bottom: auto;
+    width: 100%;
+}
+
+.impact-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(92, 67, 52, 0.03);
+    padding: clamp(0.8rem, 1vw, 1.2rem); 
+    border-radius: clamp(12px, 1.5vw, 16px);
+    width: 85%;
+    margin: 0 auto;
+}
+
+.danger-row {
+    background: rgba(220, 53, 69, 0.05);
+    border: 1px solid rgba(220, 53, 69, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(220, 53, 69, 0.08);
+}
+
+.impact-number {
+    font-family: var(--font-body);
+    font-size: clamp(2.2rem, 2.8vw, 3.2rem); 
+    font-weight: 700;
+    color: var(--primary-brown);
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.danger-text {
+    color: #DC3545;
+    font-size: clamp(2.8rem, 3.5vw, 4rem); /* O "3" gigante e responsivo */
+}
+
+.impact-text {
+    width: 50%;
+    height: fit-content;
+    padding-left: clamp(0.8rem, 1vw, 1.2rem);
+    text-align: left;
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.1vw, 1.2rem);
+    color: var(--text-dark);
+    line-height: 1.3;
+}
+
+.impact-text strong {
+    font-weight: 700;
+    color: #DC3545;
+}
+
+.impact-arrow {
+    font-size: clamp(1.2rem, 1.5vw, 1.8rem);
+    color: rgba(92, 67, 52, 0.3);
+    margin: 0.2rem 0;
+    text-align: center;
+}
+
+/* Rodapé dos Cartões */
+.data-note {
+    margin-top: clamp(1rem, 1.5vh, 1.5rem); 
+    padding-top: clamp(1rem, 1.5vh, 1.5rem);
+    border-top: 1px solid rgba(92, 67, 52, 0.1);
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 0.9vw, 1rem);
+    font-weight: 500;
+    color: rgba(30, 26, 24, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    width: 100%;
+}
+
+.data-note i {
+    font-size: clamp(1.2rem, 1.4vw, 1.6rem);
+    color: #28A745; 
+}
+
+.danger-note {
+    color: #DC3545;
+}
+
+.danger-note i {
+    color: #DC3545;
+}
+
+.ajusted-header-slide-3{
+    margin-top: 3rem;
+}
+
+/* =========================================
+   SLIDE 4: SINTOMAS PERCEBIDOS (RESPONSIVO COM CLAMP)
+========================================= */
+
+/* Grid de 3 colunas fluido */
+.symptoms-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1rem, 1.5vw, 2.5rem); /* Espaçamento flexível */
+    width: 100%;
+    max-width: clamp(1000px, 85vw, 1300px);
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Estilo do Cartão de Sintoma */
+.symptom-card {
+    background: var(--white);
+    border: 1px solid rgba(92, 67, 52, 0.08);
+    border-radius: clamp(12px, 1.5vw, 20px);
+    padding: clamp(1.2rem, 1.5vw, 2rem) clamp(1.5rem, 1.8vw, 2.2rem); 
+    display: flex;
+    flex-direction: column; 
+    gap: clamp(0.6rem, 1vw, 1.2rem);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    transition: all 0.4s ease;
+}
+
+.symptom-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 15px 35px rgba(92, 67, 52, 0.08);
+    border-color: rgba(226, 149, 120, 0.4);
+}
+
+/* Ícone do Sintoma */
+.symptom-icon {
+    width: clamp(45px, 4vw, 60px); 
+    height: clamp(45px, 4vw, 60px);
+    background: rgba(226, 149, 120, 0.1);
+    color: var(--accent-orange);
+    border-radius: clamp(10px, 1.2vw, 14px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.4rem, 1.8vw, 2rem); 
+    transition: all 0.4s ease;
+}
+
+.symptom-card:hover .symptom-icon {
+    background: var(--accent-orange);
+    color: var(--white);
+    transform: scale(1.05);
+}
+
+/* Textos do Cartão */
+.symptom-info {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.3rem, 0.5vw, 0.6rem);
+}
+
+.symptom-title {
+    font-family: var(--font-title);
+    font-size: clamp(1.05rem, 1.2vw, 1.3rem); 
+    color: var(--primary-brown);
+    font-weight: 600;
+}
+
+.symptom-desc {
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 0.9vw, 1rem); 
+    color: var(--text-dark);
+    line-height: 1.4;
+    opacity: 0.85;
+}
+
+/* --- Cartão de Alerta (Desgaste da Equipe) --- */
+.warning-symptom {
+    background: rgba(220, 53, 69, 0.02);
+    border-color: rgba(220, 53, 69, 0.2);
+}
+
+.warning-symptom .symptom-icon {
+    background: rgba(220, 53, 69, 0.1);
+    color: #DC3545;
+}
+
+.warning-symptom:hover {
+    border-color: rgba(220, 53, 69, 0.4);
+    box-shadow: 0 15px 35px rgba(220, 53, 69, 0.1);
+}
+
+.warning-symptom:hover .symptom-icon {
+    background: #DC3545;
+    color: var(--white);
+}
+
+/* Ajuste específico para o cabeçalho do Slide 4 */
+#slide-4 .slide-header {
+    margin-bottom: clamp(1.5rem, 2vh, 3rem); 
+}
+
+.ajusted-header-slide-4 {
+    margin-top: 5rem;
+}
+
+
+/* =========================================
+   SLIDE 5: O DIAGNÓSTICO (PIPELINE STORY)
+========================================= */
+
+/* Container do Pipeline */
+.pipeline-story {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 2vw, 3rem);
+    width: 100%;
+    max-width: clamp(1000px, 90vw, 1400px);
+    margin: clamp(1rem, 3vh, 3rem) auto 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* Base para os Grupos (Cartões principais) */
+.pipeline-group {
+    background: var(--white);
+    border-radius: clamp(16px, 2vw, 24px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.04);
+    border: 1px solid rgba(92, 67, 52, 0.08);
+    position: relative;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* 1. O MOTOR (Saudável - Agrupa Fases 1 e 2) */
+.healthy-group {
+    flex: 1;
+    padding: clamp(1.5rem, 2vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.group-label {
+    font-family: var(--font-body);
+    font-size: clamp(0.75rem, 0.8vw, 0.9rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: rgba(30, 26, 24, 0.5);
+    margin-bottom: clamp(1rem, 1.5vh, 1.5rem);
+    display: block;
+    border-bottom: 1px solid rgba(92, 67, 52, 0.1);
+    padding-bottom: 0.5rem;
+}
+
+.inner-step {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.8rem, 1vw, 1.2rem);
+}
+
+.step-icon-small {
+    width: clamp(45px, 3.5vw, 55px);
+    height: clamp(45px, 3.5vw, 55px);
+    border-radius: clamp(10px, 1vw, 14px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.4rem, 1.8vw, 2rem);
+    flex-shrink: 0;
+}
+
+.step-success .step-icon-small { background: rgba(40, 167, 69, 0.1); color: #28A745; }
+.step-warning .step-icon-small { background: rgba(226, 149, 120, 0.1); color: var(--accent-orange); }
+
+.step-text-small h4 {
+    font-family: var(--font-title);
+    font-size: clamp(1rem, 1.1vw, 1.25rem);
+    color: var(--primary-brown);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.step-text-small p {
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 0.9vw, 1rem);
+    color: var(--text-dark);
+    opacity: 0.8;
+}
+
+/* Conector interno entre Captação e Recebimento */
+.step-connector-vertical {
+    width: 2px;
+    height: clamp(20px, 3vh, 30px);
+    background: rgba(92, 67, 52, 0.15);
+    margin-left: clamp(22px, 1.75vw, 26px); /* Centraliza perfeitamente com o ícone */
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* A FRATURA (Onde a esteira quebra) */
+.pipeline-fracture {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #DC3545;
+    flex-shrink: 0;
+}
+
+.pipeline-fracture i {
+    font-size: clamp(2.5rem, 3vw, 4rem);
+}
+
+.pipeline-fracture span {
+    font-family: var(--font-body);
+    font-size: clamp(0.7rem, 0.8vw, 0.9rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* 2. O GARGALO (A Parede - O Protagonista) */
+.critical-group {
+    flex: 1.2; /* Ligeiramente mais largo */
+    padding: clamp(2rem, 3vw, 3.5rem) clamp(1.8rem, 2.5vw, 3rem);
+    border: 2px solid rgba(220, 53, 69, 0.3);
+    background: rgba(220, 53, 69, 0.02);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    transform: scale(1.05); /* Destaque que salta da tela */
+    z-index: 10;
+}
+
+.critical-group:hover {
+    transform: scale(1.07) translateY(-5px);
+    box-shadow: 0 20px 45px rgba(220, 53, 69, 0.1);
+}
+
+.critical-badge {
+    position: absolute;
+    top: -15px;
+    left: clamp(1.5rem, 2vw, 2.5rem);
+    background: #DC3545;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: clamp(0.75rem, 0.85vw, 0.95rem);
+    padding: clamp(0.4rem, 0.6vh, 0.6rem) clamp(1rem, 1.2vw, 1.5rem);
+    border-radius: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.critical-icon {
+    width: clamp(60px, 5vw, 75px);
+    height: clamp(60px, 5vw, 75px);
+    background: rgba(220, 53, 69, 0.1);
+    color: #DC3545;
+    border-radius: clamp(12px, 1.5vw, 18px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    margin-bottom: clamp(1rem, 1.5vh, 2rem);
+}
+
+.critical-title {
+    font-family: var(--font-title);
+    font-size: clamp(1.3rem, 1.5vw, 1.7rem);
+    color: #DC3545;
+    font-weight: 700;
+    margin-bottom: clamp(0.6rem, 1vh, 1rem);
+}
+
+.critical-desc {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.1vw, 1.2rem);
+    color: var(--text-dark);
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* SETA FANTASMA (O que quase não passa pro final) */
+.pipeline-fade-arrow {
+    font-size: clamp(1.8rem, 2vw, 2.5rem);
+    color: rgba(92, 67, 52, 0.15);
+    flex-shrink: 0;
+}
+
+/* 3. A CONSEQUÊNCIA (Fase 4 - O que sobra) */
+.consequence-group {
+    flex: 0.8; /* Bloco menor */
+    padding: clamp(1.5rem, 2vw, 2.5rem);
+    opacity: 0.6;
+    filter: grayscale(1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: clamp(0.8rem, 1vh, 1.2rem);
+    border-style: dashed; /* Borda tracejada mostra fragilidade */
+}
+
+.consequence-icon {
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    color: rgba(92, 67, 52, 0.4);
+}
+
+.consequence-group h4 {
+    font-family: var(--font-title);
+    font-size: clamp(1.1rem, 1.2vw, 1.35rem);
+    color: rgba(30, 26, 24, 0.7);
+}
+
+.consequence-group p {
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 0.9vw, 1rem);
+    color: rgba(30, 26, 24, 0.5);
+}
+
+.ajusted-header-slide-5 {
+    margin-top: 5rem;
+}
+
+/* =========================================
+   SLIDE 6: CAUSA-RAIZ 1 (ESTRUTURA DA CONTA)
+========================================= */
+
+/* --- Coluna Esquerda: Frase de Impacto --- */
+.impact-quote {
+    margin-top: clamp(2rem, 4vh, 4rem);
+    padding: clamp(1.5rem, 2vw, 2.5rem) clamp(2rem, 3vw, 3rem);
+    background: linear-gradient(90deg, rgba(226, 149, 120, 0.08) 0%, rgba(248, 246, 240, 0) 100%);
+    border-left: 4px solid var(--accent-orange);
+    border-radius: 0 clamp(12px, 1.5vw, 20px) clamp(12px, 1.5vw, 20px) 0;
+    position: relative;
+}
+
+.impact-quote i {
+    position: absolute;
+    top: clamp(-15px, -2vh, -20px);
+    left: clamp(15px, 2vw, 25px);
+    font-size: clamp(2rem, 3vw, 3.5rem);
+    color: var(--accent-orange);
+    background: var(--bg-color); /* Fundo da mesma cor do slide para "cortar" a borda */
+    padding: 0 10px;
+    line-height: 1;
+}
+
+.impact-quote p {
+    font-family: var(--font-title);
+    font-size: clamp(1.2rem, 1.4vw, 1.6rem);
+    color: var(--primary-brown);
+    line-height: 1.5;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.impact-quote strong {
+    color: #DC3545; /* Destaque no perigo da oscilação */
+}
+
+/* --- Coluna Direita: Dashboard de Risco --- */
+.risk-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.2rem, 2vw, 2rem);
+    width: 100%;
+}
+
+/* Cartão Base */
+.risk-card {
+    background: var(--white);
+    border: 1px solid rgba(92, 67, 52, 0.08);
+    border-radius: clamp(16px, 2vw, 24px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+    padding: clamp(1.5rem, 2vw, 2.5rem);
+    transition: transform 0.3s ease;
+}
+
+.risk-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+}
+
+/* Bloco de Risco Principal (Barras de Progresso) */
+.main-risk {
+    border: 2px solid rgba(220, 53, 69, 0.15);
+    background: rgba(220, 53, 69, 0.01);
+}
+
+.risk-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: clamp(1.5rem, 2vh, 2.5rem);
+}
+
+.risk-header i {
+    font-size: clamp(1.8rem, 2vw, 2.4rem);
+    color: #DC3545;
+}
+
+.risk-header h3 {
+    font-family: var(--font-title);
+    font-size: clamp(1.2rem, 1.4vw, 1.6rem);
+    color: var(--primary-brown);
+    font-weight: 600;
+}
+
+/* Grupo de Estatísticas (As Barras) */
+.dependency-stats {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1.5rem, 2vh, 2rem);
+}
+
+.stat-bar-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.stat-bar-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.stat-bar-info span {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+.stat-bar-info strong {
+    font-family: var(--font-title);
+    font-size: clamp(1.4rem, 1.6vw, 1.8rem);
+    color: #DC3545; /* Vermelho para mostrar que 64% é perigoso */
+    line-height: 1;
+}
+
+/* Pista e Preenchimento da Barra */
+.progress-track {
+    width: 100%;
+    height: clamp(8px, 1vw, 12px);
+    background: rgba(92, 67, 52, 0.08);
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 50px;
+    /* Animação suave ao abrir o slide */
+    transition: width 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.danger-fill { background: #DC3545; }
+.warning-fill { background: var(--accent-orange); } /* Usamos o laranja da paleta para diferenciar */
+
+.stat-caption {
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 0.9vw, 1rem);
+    color: rgba(30, 26, 24, 0.6);
+    margin-top: 0.2rem;
+}
+
+.stat-caption strong {
+    color: var(--primary-brown);
+    font-weight: 700;
+}
+
+/* Sintomas Secundários (Grid inferior com 2 cards) */
+.secondary-risks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(1rem, 1.5vw, 1.5rem);
+}
+
+.secondary-risk {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.8rem, 1vh, 1.2rem);
+    padding: clamp(1.2rem, 1.5vw, 1.8rem);
+}
+
+.secondary-risk .risk-icon {
+    width: clamp(45px, 4vw, 55px);
+    height: clamp(45px, 4vw, 55px);
+    background: rgba(92, 67, 52, 0.05);
+    color: var(--primary-brown);
+    border-radius: clamp(10px, 1vw, 14px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+}
+
+.risk-text h4 {
+    font-family: var(--font-title);
+    font-size: clamp(1.05rem, 1.1vw, 1.25rem);
+    color: var(--primary-brown);
+    margin-bottom: 0.3rem;
+}
+
+.risk-text p {
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 0.9vw, 1rem);
+    color: var(--text-dark);
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+/* =========================================
+   SLIDE 7: CAUSA-RAIZ 2 (FORMULÁRIOS)
+========================================= */
+
+/* --- Frase de Impacto Centralizada --- */
+.quote-center {
+    width: 100%;
+    max-width: clamp(800px, 70vw, 1000px);
+    margin: clamp(1rem, 2vh, 2rem) auto clamp(2rem, 3vh, 3.5rem);
+    text-align: center;
+    border-left: none; /* Remove a borda lateral do padrão */
+    border-top: 3px solid var(--accent-orange);
+    border-bottom: 3px solid var(--accent-orange);
+    border-radius: clamp(12px, 1.5vw, 20px);
+    background: linear-gradient(180deg, rgba(226, 149, 120, 0.05) 0%, rgba(248, 246, 240, 0) 100%);
+    padding: clamp(1.2rem, 2vh, 2rem) clamp(2rem, 3vw, 4rem);
+}
+
+.quote-center i {
+    top: clamp(-18px, -2vh, -24px);
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.quote-center p {
+    font-size: clamp(1.1rem, 1.3vw, 1.5rem);
+}
+
+/* --- Container do Comparativo --- */
+.form-comparison {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 2vw, 2.5rem);
+    width: 100%;
+    max-width: clamp(950px, 85vw, 1200px);
+    margin: 0 auto;
+}
+
+/* --- Cartões Base --- */
+.form-card {
+    flex: 1;
+    background: var(--white);
+    border-radius: clamp(16px, 2vw, 24px);
+    padding: clamp(1.5rem, 2vh, 2.5rem) clamp(1.5rem, 2vw, 2rem);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Iguala a altura dos dois cartões */
+    border: 1px solid rgba(92, 67, 52, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.form-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+}
+
+/* Pílula de Sucesso (A de alerta já existe no CSS global) */
+.success-badge {
+    background: rgba(40, 167, 69, 0.1);
+    color: #28A745;
+}
+
+.form-title {
+    font-family: var(--font-title);
+    font-size: clamp(1.3rem, 1.5vw, 1.7rem);
+    color: var(--primary-brown);
+    text-align: center;
+    margin-bottom: clamp(1.2rem, 2vh, 1.8rem);
+    font-weight: 600;
+}
+
+/* --- Listas de Características --- */
+.form-flaws, .form-fixes {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.8rem, 1.2vh, 1.2rem);
+    margin-bottom: clamp(1.5rem, 2vh, 2.5rem);
+    flex: 1; /* Empurra o rodapé pro fundo */
+}
+
+.form-flaws li, .form-fixes li {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    line-height: 1.4;
+}
+
+/* Ícones das listas */
+.form-flaws i {
+    color: #DC3545;
+    font-size: clamp(1.2rem, 1.4vw, 1.6rem);
+    background: rgba(220, 53, 69, 0.1);
+    padding: 0.3rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.form-fixes i {
+    color: #28A745;
+    font-size: clamp(1.2rem, 1.4vw, 1.6rem);
+    background: rgba(40, 167, 69, 0.1);
+    padding: 0.3rem;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+/* --- Rodapés de Resultado --- */
+.form-result {
+    padding: clamp(1rem, 1.5vh, 1.5rem);
+    border-radius: clamp(10px, 1.2vw, 14px);
+    font-family: var(--font-body);
+    font-size: clamp(0.9rem, 1vw, 1.1rem);
+    font-weight: 600;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+}
+
+.form-result i {
+    font-size: clamp(1.4rem, 1.6vw, 1.8rem);
+}
+
+.danger-result {
+    background: rgba(220, 53, 69, 0.05);
+    color: #DC3545;
+    border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+.success-result {
+    background: rgba(40, 167, 69, 0.05);
+    color: #28A745;
+    border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+/* --- Seta Central de Evolução --- */
+.evolution-arrow {
+    font-size: clamp(2.5rem, 3vw, 4rem);
+    color: var(--accent-orange);
+    opacity: 0.6;
+    flex-shrink: 0;
+}
+
+/* =========================================
+   SLIDE 8: CAUSA-RAIZ 3 (ATENDIMENTO)
+========================================= */
+
+/* --- Coluna Esquerda: Diagnóstico do Atendimento --- */
+.service-diagnosis {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(1rem, 2vh, 1.5rem);
+    margin-top: clamp(1.5rem, 3vh, 3rem);
+}
+
+.diagnosis-card {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 1.5vw, 1.5rem);
+    background: rgba(92, 67, 52, 0.02);
+    padding: clamp(1rem, 1.5vh, 1.5rem) clamp(1.2rem, 1.5vw, 1.5rem);
+    border-radius: clamp(12px, 1.5vw, 16px);
+    border: 1px solid rgba(92, 67, 52, 0.08);
+    border-left: 4px solid rgba(92, 67, 52, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.diagnosis-card:hover {
+    transform: translateX(5px);
+    background: rgba(92, 67, 52, 0.04);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
+}
+
+/* Ícones dos cartões de diagnóstico */
+.diag-icon {
+    width: clamp(45px, 4vw, 55px);
+    height: clamp(45px, 4vw, 55px);
+    background: var(--white);
+    border-radius: clamp(10px, 1vw, 14px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    color: var(--primary-brown);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    flex-shrink: 0;
+}
+
+.diag-text h4 {
+    font-family: var(--font-title);
+    font-size: clamp(1.05rem, 1.2vw, 1.25rem);
+    color: var(--primary-brown);
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+}
+
+.diag-text p {
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 0.9vw, 1rem);
+    color: var(--text-dark);
+    opacity: 0.8;
+    line-height: 1.4;
+}
+
+/* Destaque Crítico para o impacto no Corretor */
+.critical-diag {
+    background: rgba(220, 53, 69, 0.02);
+    border-color: rgba(220, 53, 69, 0.15);
+    border-left: 4px solid #DC3545;
+}
+
+.critical-diag:hover {
+    background: rgba(220, 53, 69, 0.05);
+}
+
+.critical-diag .diag-icon {
+    color: #DC3545;
+}
+
+.critical-diag .diag-text h4 {
+    color: #DC3545;
+}
+
+/* --- Coluna Direita: Fluxo de Queda (Drop-off) --- */
+.dropoff-flow {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: clamp(350px, 35vw, 450px);
+    margin: 0 auto;
+}
+
+/* Cartões de Etapa do Fluxo */
+.dropoff-step {
+    display: flex;
+    align-items: center;
+    gap: clamp(1rem, 1.5vw, 1.5rem);
+    width: 100%;
+    padding: clamp(1rem, 1.8vh, 1.5rem) clamp(1.2rem, 2vw, 1.8rem);
+    background: var(--white);
+    border-radius: clamp(12px, 1.5vw, 16px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(92, 67, 52, 0.08);
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.dropoff-icon {
+    width: clamp(45px, 4vw, 55px);
+    height: clamp(45px, 4vw, 55px);
+    border-radius: clamp(10px, 1vw, 14px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(1.5rem, 2vw, 2.2rem);
+    flex-shrink: 0;
+}
+
+.dropoff-text h4 {
+    font-family: var(--font-title);
+    font-size: clamp(1.05rem, 1.2vw, 1.3rem);
+    margin-bottom: 0.2rem;
+    font-weight: 600;
+}
+
+.dropoff-text p {
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 0.9vw, 1rem);
+    color: var(--text-dark);
+    opacity: 0.8;
+    line-height: 1.3;
+}
+
+/* Conectores (Setinhas para baixo) */
+.dropoff-connector {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    color: rgba(92, 67, 52, 0.2);
+    margin: clamp(0.2rem, 0.5vh, 0.5rem) 0;
+    line-height: 1;
+}
+
+/* --- Cores Progressivas do Fluxo --- */
+
+/* 1. Entrada (Tudo certo) */
+.step-neutral .dropoff-icon { 
+    background: rgba(40, 167, 69, 0.1); 
+    color: #28A745; 
+}
+.step-neutral h4 { color: #28A745; }
+
+/* 2. Atendimento (Começa a falhar) */
+.step-warning .dropoff-icon { 
+    background: rgba(226, 149, 120, 0.1); 
+    color: var(--accent-orange); 
+}
+.step-warning h4 { color: var(--accent-orange); }
+
+/* 3. Resposta (Problema grave) */
+.step-danger .dropoff-icon { 
+    background: rgba(220, 53, 69, 0.1); 
+    color: #DC3545; 
+}
+.step-danger h4 { color: #DC3545; }
+
+/* 4. Visita (O Gargalo Estourou) */
+.step-critical {
+    border: 2px solid rgba(220, 53, 69, 0.3);
+    background: rgba(220, 53, 69, 0.02);
+    transform: scale(1.05); /* Destaca o último passo */
+    z-index: 10;
+}
+
+.step-critical:hover {
+    transform: scale(1.08) translateY(-3px);
+    box-shadow: 0 15px 30px rgba(220, 53, 69, 0.1);
+}
+
+.step-critical .dropoff-icon { 
+    background: #DC3545; 
+    color: var(--white); 
+}
+.step-critical h4 { 
+    color: #DC3545; 
+    font-weight: 700; 
+}
+
+/* =========================================
+   SLIDE 9: CAUSA-RAIZ 4 (FEEDBACK DE DADOS)
+========================================= */
+
+/* Container do Diagrama de Loop */
+.data-loop-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 2vw, 2rem);
+    width: 100%;
+    margin-top: clamp(1.5rem, 3vh, 3rem);
+    position: relative;
+}
+
+/* Nós (Meta e CRM) */
+.loop-node {
+    flex: 0 0 clamp(200px, 18vw, 280px);
+    background: var(--white);
+    padding: clamp(1.5rem, 2vh, 2.5rem);
+    border-radius: clamp(20px, 2.5vw, 30px);
+    text-align: center;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(92, 67, 52, 0.08);
+    z-index: 5;
+}
+
+.node-icon {
+    width: clamp(60px, 5vw, 80px);
+    height: clamp(60px, 5vw, 80px);
+    margin: 0 auto clamp(1rem, 1.5vh, 1.5rem);
+    background: rgba(92, 67, 52, 0.05);
+    color: var(--primary-brown);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: clamp(2rem, 2.5vw, 3rem);
+}
+
+.meta-node { border-bottom: 5px solid #1877F2; } /* Cor do Meta */
+.crm-node { border-bottom: 5px solid var(--accent-orange); }
+
+.loop-node h4 {
+    font-size: clamp(1.2rem, 1.4vw, 1.6rem);
+    margin-bottom: 0.5rem;
+}
+
+.loop-node p {
+    font-size: clamp(0.85rem, 0.9vw, 1rem);
+    line-height: 1.4;
+    opacity: 0.8;
+}
+
+/* Caminhos das Setas */
+.loop-pathways {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4vh, 4rem);
+    padding: 0 1rem;
+}
+
+.path-track {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.track-label {
+    font-family: var(--font-body);
+    font-size: clamp(0.75rem, 0.8vw, 0.9rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+    color: #28A745;
+}
+
+.danger-label { color: #DC3545; }
+
+/* Design das Setas */
+.track-arrow {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    position: relative;
+}
+
+.arrow-line {
+    flex: 1;
+    height: 3px;
+    background: #28A745;
+    border-radius: 2px;
+}
+
+.success-arrow i {
+    font-size: 1.8rem;
+    color: #28A745;
+    margin-left: -5px;
+}
+
+/* Seta Quebrada */
+.broken-line {
+    background: #DC3545;
+    border-style: dashed;
+    background: repeating-linear-gradient(90deg, #DC3545, #DC3545 10px, transparent 10px, transparent 20px);
+}
+
+.broken-arrow i:first-child {
+    font-size: 1.8rem;
+    color: #DC3545;
+    margin-right: -5px;
+}
+
+.break-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: #DC3545;
+    font-size: 2rem;
+    padding: 0 5px;
+    margin-top: 10px;
+}
+
+/* Painel de Vazamento Inferior */
+.lost-data-panel {
+    margin-top: clamp(2rem, 4vh, 4rem);
+    width: 100%;
+    max-width: 900px;
+    background: rgba(220, 53, 69, 0.03);
+    border: 1px solid rgba(220, 53, 69, 0.15);
+    border-radius: clamp(15px, 2vw, 20px);
+    padding: clamp(1.2rem, 2vh, 1.8rem);
+
+    margin: 40px auto 0 auto; /* Centraliza e dá um espaçamento do topo */
+}
+
+.lost-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1.2rem;
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 1.1vw, 1.2rem);
+    color: var(--text-dark);
+}
+
+.lost-header i { color: #DC3545; font-size: 1.5rem; }
+
+.lost-data-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    list-style: none;
+}
+
+.lost-data-grid li {
+    background: var(--white);
+    padding: 0.8rem;
+    border-radius: 12px;
+    font-size: clamp(0.85rem, 0.9vw, 1rem);
+    font-weight: 600;
+    color: var(--primary-brown);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.02);
+    opacity: 0.7; /* Mostra que é algo "perdido" */
+    text-decoration: line-through;
+}
+
+.lost-data-grid li i { font-size: 1.2rem; }
+
+.discard-item { color: #666 !important; }
+
+/* Animação de pulso na falha */
+@keyframes pulseDanger {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.05); opacity: 0.8; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+.track-return.pulse-warning .break-icon {
+    animation: pulseDanger 1.5s infinite ease-in-out;
+}
+
+/* =========================================
+   SLIDE 10: CAUSA-RAIZ 5 (GOVERNANÇA)
+========================================= */
+
+/* Container Principal do Ciclo */
+.governance-cycle-container {
+    position: relative;
+    width: clamp(400px, 45vh, 600px);
+    height: clamp(400px, 45vh, 600px);
+    margin: clamp(1rem, 2vh, 2rem) auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Núcleo Central (O Cadeado) */
+.cycle-core {
+    width: clamp(120px, 12vw, 160px);
+    height: clamp(120px, 12vw, 160px);
+    background: var(--white);
+    border: 3px solid #DC3545;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    box-shadow: 0 10px 30px rgba(220, 53, 69, 0.15);
+}
+
+.cycle-core i {
+    font-size: clamp(2.5rem, 3vw, 3.5rem);
+    color: #DC3545;
+    margin-bottom: 5px;
+}
+
+.cycle-core span {
+    font-family: var(--font-body);
+    font-size: clamp(0.7rem, 0.8vw, 0.9rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #DC3545;
+    text-align: center;
+}
+
+/* Nós Orbitais */
+.c-node {
+    position: absolute;
+    width: clamp(200px, 20vw, 250px);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--white);
+    padding: 12px 18px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(92, 67, 52, 0.08);
+    z-index: 5;
+}
+
+/* Posicionamento dos 4 Nós */
+.node-mkt { top: 0; left: 50%; transform: translateX(-50%); }
+.node-com { right: -150px; top: 50%; transform: translateY(-50%); }
+.node-crm { bottom: 0; left: 50%; transform: translateX(-50%); }
+.node-ads { left: -150px; top: 50%; transform: translateY(-50%); }
+
+.c-node-icon {
+    width: 45px;
+    height: 45px;
+    background: rgba(92, 67, 52, 0.05);
+    color: var(--primary-brown);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.c-node-text h4 {
+    font-size: 0.95rem;
+    margin-bottom: 2px;
+    font-weight: 700;
+}
+
+.c-node-text p {
+    font-size: 0.8rem;
+    line-height: 1.2;
+    opacity: 0.7;
+}
+
+/* SVG da Linha de Ciclo */
+.cycle-svg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.cycle-path {
+    fill: none;
+    stroke: rgba(92, 67, 52, 0.15);
+    stroke-width: 3;
+    stroke-dasharray: 10, 10;
+}
+
+/* Painel de Impactos Inferior */
+.governance-impacts {
+    display: flex;
+    justify-content: center;
+    gap: clamp(1rem, 2vw, 2rem);
+    margin-top: clamp(1rem, 2vh, 2rem);
+}
+
+.g-impact-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(92, 67, 52, 0.04);
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+.g-impact-item i {
+    color: var(--accent-orange);
+    font-size: 1.2rem;
+}
+
+.g-impact-item span {
+    font-family: var(--font-body);
+    font-size: clamp(0.85rem, 0.9vw, 1rem);
+    font-weight: 500;
+    color: var(--primary-brown);
+}
+
+/* Animação suave no cadeado */
+@keyframes shakeLock {
+    0%, 100% { transform: rotate(0); }
+    25% { transform: rotate(-5deg); }
+    75% { transform: rotate(5deg); }
+}
+
+.cycle-core i {
+    animation: shakeLock 3s infinite ease-in-out;
+}
+
+/* =========================================
+   SLIDE 11: AMBIENTE COMPETITIVO (LEILÃO)
+========================================= */
+
+/* --- Container do Comparativo VS --- */
+.auction-comparison {
+    display: flex;
+    align-items: stretch; /* Faz os cartões terem a mesma altura */
+    justify-content: center;
+    gap: clamp(2rem, 4vw, 5rem);
+    width: 100%;
+    max-width: clamp(950px, 85vw, 1200px);
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
+}
+
+/* --- Cartões Base de Leilão --- */
+.auction-card {
+    flex: 1;
+    background: var(--white);
+    border-radius: clamp(16px, 2vw, 24px);
+    padding: clamp(1.5rem, 2vh, 2.5rem) clamp(1.5rem, 2vw, 2.5rem);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
+.auction-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Estilo do Concorrente (Robusto e Sólido) */
+.competitor-card {
+    border: 1px solid rgba(92, 67, 52, 0.2);
+    border-top: 5px solid var(--primary-brown);
+}
+
+/* Estilo da Place (Alerta/Vulnerável) */
+.place-card {
+    border: 1px solid rgba(220, 53, 69, 0.2);
+    border-top: 5px solid #DC3545;
+    background: rgba(220, 53, 69, 0.01);
+}
+
+/* Badges Específicos */
+.threat-badge {
+    background: var(--primary-brown);
+    color: var(--white);
+}
+
+.auction-title {
+    font-family: var(--font-title);
+    font-size: clamp(1.3rem, 1.5vw, 1.7rem);
+    color: var(--primary-brown);
+    text-align: center;
+    margin-bottom: clamp(1.2rem, 2vh, 1.8rem);
+    font-weight: 600;
+}
+
+.place-card .auction-title {
+    color: #DC3545;
+}
+
+/* --- Listas de Características --- */
+.auction-traits {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.8rem, 1.2vh, 1.2rem);
+    margin-bottom: clamp(1.5rem, 2vh, 2.5rem);
+    flex: 1; /* Empurra o resultado pro fundo */
+}
+
+.auction-traits li {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1.1vw, 1.15rem);
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    line-height: 1.4;
+}
+
+/* Ícones das listas */
+.competitor-card .auction-traits i {
+    color: var(--primary-brown);
+    font-size: clamp(1.2rem, 1.4vw, 1.6rem);
+    background: rgba(92, 67, 52, 0.1);
+    padding: 0.3rem;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+.place-card .auction-traits i {
+    color: #DC3545;
+    font-size: clamp(1.2rem, 1.4vw, 1.6rem);
+    background: rgba(220, 53, 69, 0.1);
+    padding: 0.3rem;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+/* --- Rodapés de Resultado (Efeito no Leilão) --- */
+.auction-result {
+    padding: clamp(1.2rem, 1.5vh, 1.5rem);
+    border-radius: clamp(10px, 1.2vw, 14px);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.win-result {
+    background: rgba(40, 167, 69, 0.05);
+    border: 1px solid rgba(40, 167, 69, 0.2);
+}
+
+.lose-result {
+    background: rgba(220, 53, 69, 0.05);
+    border: 1px solid rgba(220, 53, 69, 0.2);
+}
+
+.auction-result p {
+    font-family: var(--font-body);
+    font-size: clamp(0.95rem, 1vw, 1.1rem);
+    color: var(--text-dark);
+}
+
+.win-result p strong { color: #28A745; }
+.lose-result p strong { color: #DC3545; }
+
+/* Tags Analíticas */
+.result-tags {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.6rem;
+}
+
+.tag-plus, .tag-minus {
+    font-family: var(--font-body);
+    font-size: clamp(0.7rem, 0.8vw, 0.85rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 0.3rem 0.8rem;
+    border-radius: 50px;
+}
+
+.tag-plus {
+    background: #28A745;
+    color: var(--white);
+    box-shadow: 0 3px 8px rgba(40, 167, 69, 0.2);
+}
+
+.tag-minus {
+    background: #DC3545;
+    color: var(--white);
+    box-shadow: 0 3px 8px rgba(220, 53, 69, 0.2);
+}
+
+/* --- Selo "VS" Central --- */
+.vs-badge {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(55px, 5vw, 75px);
+    height: clamp(55px, 5vw, 75px);
+    background: var(--accent-orange);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-title);
+    font-size: clamp(1.4rem, 1.8vw, 2.2rem);
+    font-weight: 700;
+    border: 5px solid var(--bg-color); /* Cria o efeito de "corte" entre os cartões */
+    z-index: 10;
+    box-shadow: 0 5px 15px rgba(226, 149, 120, 0.4);
+}
+
+section.slide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+section.slide.active {
+    opacity: 1 !important;
+    visibility: visible !important;
+}
