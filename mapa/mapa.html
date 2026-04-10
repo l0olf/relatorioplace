@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roadmap Place | Rota de Implementação</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="roadmap-wrapper">
+
+        <header class="roadmap-header">
+            <div class="container">
+                <div class="brand-top">
+                    <i class="ph ph-buildings"></i>
+                    <span class="brand-name">PLACE</span>
+                </div>
+                <div class="header-main-content">
+                    <span class="badge-gold">Plano de Implementação 30 Dias</span>
+                    <h1 class="main-title">A Rota para a <span>Alta Performance</span></h1>
+                    <p class="main-subtitle">Da reestruturação à automação: o mapa cronológico para transformar o
+                        tráfego da Place em uma máquina de vendas previsível.</p>
+                </div>
+
+                <nav class="roadmap-nav">
+                    <a href="#setup" class="nav-dot active" data-label="Setup Inicial">
+                        <span class="dot"></span>
+                        <span class="dot-text">Semana 1</span>
+                    </a>
+                    <a href="#crm-capi" class="nav-dot" data-label="CRM & Inteligência">
+                        <span class="dot"></span>
+                        <span class="dot-text">Semana 2</span>
+                    </a>
+                    <a href="#automacao" class="nav-dot" data-label="Automação">
+                        <span class="dot"></span>
+                        <span class="dot-text">Semana 3</span>
+                    </a>
+                    <a href="#consolidacao" class="nav-dot" data-label="Consolidação">
+                        <span class="dot"></span>
+                        <span class="dot-text">Semana 4</span>
+                    </a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="roadmap-content">
+            <div class="container" id="content-container">
+                <section class="roadmap-section" id="setup">
+
+                    <div class="section-intro">
+                        <span class="week-number">Semana 01</span>
+                        <h2 class="section-main-title">Enxugar a Mídia e Ligar o RMKT</h2>
+                        <p class="section-subtitle">O objetivo aqui é entrar na nova arquitetura imediatamente, parando
+                            o desperdício de verba em topo de funil e ativando a camada de fechamento.</p>
+                    </div>
+
+                    <div class="roadmap-card primary-step">
+                        <div class="card-header">
+                            <i class="ph ph-arrows-merge"></i>
+                            <h3>Reestruturação das Campanhas</h3>
+                        </div>
+                        <div class="card-body">
+                            <div class="step-grid">
+                                <div class="step-item">
+                                    <span class="step-tag">Vendas</span>
+                                    <p>Juntar <strong>Giro Rápido + Intermediário</strong>. Manter Premium isolado.</p>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-tag">Locação</span>
+                                    <p>Juntar <strong>Giro Rápido + Intermediário</strong>. Manter Premium isolado.</p>
+                                </div>
+                                <div class="step-item">
+                                    <span class="step-tag danger">Pausar</span>
+                                    <p>Comercial Always-on e campanhas de Topo de Funil isoladas.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="info-grid">
+                        <div class="info-card">
+                            <div class="info-header">
+                                <i class="ph ph-arrows-counter-clockwise"></i>
+                                <h4>Ativação de RMKT</h4>
+                            </div>
+                            <p>Vocês já possuem 3 meses de base. Não espere a automação para começar. Ligue o RMKT
+                                focado em <strong>Retomada</strong> e <strong>Prova Social</strong> agora.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-header">
+                                <i class="ph ph-users-four"></i>
+                                <h4>Criação de Públicos</h4>
+                            </div>
+                            <p>Mapear e criar no Gerenciador: Visitantes do Site (30/90d), Engajados IG/FB, Leads de
+                                Formulário e Base de CRM inicial.</p>
+                        </div>
+
+                        <div class="info-card">
+                            <div class="info-header">
+                                <i class="ph ph-palette"></i>
+                                <h4>Guia Criativo v1</h4>
+                            </div>
+                            <p>Definir padrão de <strong>Hook (3s)</strong>, copy e checklist de aprovação. Limpar a
+                                biblioteca: cortar o que é fraco e manter o que performa.</p>
+                        </div>
+                    </div>
+
+                    <div class="budget-section">
+                        <h3 class="block-title-small">Distribuição de Verba | Semana 01</h3>
+                        <div class="budget-table-wrapper">
+                            <table class="premium-table">
+                                <thead>
+                                    <tr>
+                                        <th>Campanha</th>
+                                        <th>Verba Semanal</th>
+                                        <th>Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Vendas (Prospecção)</td>
+                                        <td><strong>R$ 1.000</strong></td>
+                                        <td><span class="status-pill active">Ativo</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Locação Residencial</td>
+                                        <td><strong>R$ 650</strong></td>
+                                        <td><span class="status-pill active">Ativo</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Remarketing WhatsApp</td>
+                                        <td><strong>R$ 350</strong></td>
+                                        <td><span class="status-pill active">Ativo</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Locação Comercial</td>
+                                        <td><strong>R$ 0</strong></td>
+                                        <td><span class="status-pill paused">Pausado</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="creatives-rule-card">
+                        <div class="rule-header">
+                            <i class="ph ph-video-camera"></i>
+                            <h3>Volume de Criativos (Por Conjunto)</h3>
+                        </div>
+                        <div class="rule-content">
+                            <div class="rule-item">
+                                <strong>Prospecção:</strong> 2 Vídeos + 1 Estático (Máx 4 anúncios)
+                            </div>
+                            <div class="rule-divider"></div>
+                            <div class="rule-item">
+                                <strong>Remarketing:</strong> 1 Vídeo Retomada + 1 Vídeo Reforço + 1 Estático Direto
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="footer-grid">
+                        <div class="checklist-card">
+                            <h4><i class="ph ph-check-square"></i> Entregáveis da Semana</h4>
+                            <ul class="roadmap-list">
+                                <li>Nova estrutura 100% rodando</li>
+                                <li>RMKT ativo e gerando conversas</li>
+                                <li>Públicos de site e social criados</li>
+                                <li>Guia Criativo v1 documentado</li>
+                                <li>Planilha de controle diário ativa</li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-card">
+                            <h4><i class="ph ph-prohibit"></i> O que NÃO fazer</h4>
+                            <ul class="roadmap-list danger">
+                                <li>Não testar 10+ criativos ao mesmo tempo</li>
+                                <li>Não reabrir topo de funil por ansiedade</li>
+                                <li>Não mexer nas campanhas todos os dias</li>
+                                <li>Não subir comercial sem oferta forte</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="roadmap-section" id="crm-capi">
+
+                    <div class="section-intro">
+                        <span class="week-number">Semana 02</span>
+                        <h2 class="section-main-title">CRM e Conversões Avançadas (CAPI)</h2>
+                        <p class="section-subtitle">A construção do cérebro da operação. Paramos de contar "leads brutos" e passamos a focar em oportunidades reais conectadas ao algoritmo da Meta.</p>
+                    </div>
+
+                    <div class="pipeline-wrapper">
+                        <div class="pipeline-header">
+                            <i class="ph-duotone ph-funnel"></i>
+                            <h3>Arquitetura de Funil Inegociável</h3>
+                        </div>
+                        <div class="pipeline-track">
+                            <div class="pipeline-stage">
+                                <div class="stage-icon"><i class="ph-duotone ph-sign-in"></i></div>
+                                <h4>1. Entrada</h4>
+                                <ul>
+                                    <li><i class="ph ph-check"></i> Lead Novo</li>
+                                    <li><i class="ph ph-check"></i> Contato Iniciado</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="pipeline-divider"><i class="ph ph-caret-double-right"></i></div>
+                            
+                            <div class="pipeline-stage active-stage">
+                                <div class="stage-icon"><i class="ph-duotone ph-fire"></i></div>
+                                <h4>2. Tração</h4>
+                                <ul>
+                                    <li><i class="ph ph-check"></i> Lead Qualificado</li>
+                                    <li><i class="ph ph-check"></i> Visita Agendada</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="pipeline-divider"><i class="ph ph-caret-double-right"></i></div>
+                            
+                            <div class="pipeline-stage success-stage">
+                                <div class="stage-icon"><i class="ph-duotone ph-handshake"></i></div>
+                                <h4>3. Fechamento</h4>
+                                <ul>
+                                    <li><i class="ph ph-check"></i> Visita Realizada</li>
+                                    <li><i class="ph ph-check"></i> Proposta / Fechado</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bento-grid">
+                        <div class="bento-card dark-bento">
+                            <div class="bento-header">
+                                <i class="ph-duotone ph-timer"></i>
+                                <h3>SLA de Alta Performance</h3>
+                            </div>
+                            <ul class="sla-list-premium">
+                                <li>
+                                    <div class="sla-time-wrapper"><span class="sla-time">&lt; 5 Min</span></div>
+                                    <div class="sla-desc">
+                                        <strong>Lead Frio (Formulário)</strong>
+                                        <span>Probabilidade de contato 100x maior se atendido nessa janela.</span>
+                                    </div>
+                                </li>
+                                <li class="highlight-item">
+                                    <div class="sla-time-wrapper"><span class="sla-time highlight">Imediato</span></div>
+                                    <div class="sla-desc">
+                                        <strong>Lead Quente (WhatsApp)</strong>
+                                        <span>Resposta em tempo real pelo corretor de plantão.</span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="sla-time-wrapper"><span class="sla-time">6 Tentat.</span></div>
+                                    <div class="sla-desc">
+                                        <strong>Follow-up Mínimo</strong>
+                                        <span>Tentativas obrigatórias antes de dar "loss" no lead.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="bento-column">
+                            <div class="bento-card light-bento">
+                                <div class="bento-header">
+                                    <i class="ph-duotone ph-broom"></i>
+                                    <h3>Higiene de Dados</h3>
+                                </div>
+                                <p class="bento-text">Todo lead precisa ter: <strong>Origem, Cluster, Código do Imóvel e Motivo de Perda</strong>. Leads parados há mais de 48h devem ir para "Sem Resposta".</p>
+                            </div>
+                            <div class="bento-card light-bento border-accent">
+                                <div class="bento-header">
+                                    <i class="ph-duotone ph-crosshairs"></i>
+                                    <h3>Métrica Foco: CPQL</h3>
+                                </div>
+                                <p class="bento-text">Custo por Lead Qualificado. Se o seu CPL é baixo, mas o <strong>CPQL</strong> é alto, o gargalo não é verba: é filtro do formulário ou a promessa do criativo.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tech-panel">
+                        <div class="tech-header">
+                            <div class="tech-title">
+                                <i class="ph-duotone ph-hard-drives"></i>
+                                <h3>Mapeamento Técnico: CRM x Meta CAPI</h3>
+                            </div>
+                            <span class="tech-status"><span class="pulse-dot"></span> Server-side Sync</span>
+                        </div>
+                        <div class="tech-table-wrapper">
+                            <table class="tech-table">
+                                <thead>
+                                    <tr>
+                                        <th>Gatilho no CRM (Ação Comercial)</th>
+                                        <th>Evento CAPI (Disparo)</th>
+                                        <th>Impacto no Algoritmo Meta</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Lead entra no funil inicial</td>
+                                        <td><span class="code-tag">Lead</span></td>
+                                        <td>Otimiza volume de entrada básica.</td>
+                                    </tr>
+                                    <tr class="focus-row">
+                                        <td>Lead movido para 'Qualificado'</td>
+                                        <td><span class="code-tag highlight">QualifiedLead</span></td>
+                                        <td>Filtra o público e otimiza por qualidade real.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Check-in de Visita realizado no sistema</td>
+                                        <td><span class="code-tag">ScheduleVisit</span></td>
+                                        <td>Ensina a Meta a buscar intenção fortíssima.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Contrato assinado / Imóvel fechado</td>
+                                        <td><span class="code-tag success">Purchase</span></td>
+                                        <td>Sinal definitivo de ROI para a conta de anúncios.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    
+                    <div class="footer-grid" style="margin-top: 3rem;">
+                        <div class="checklist-card">
+                            <h4><i class="ph-duotone ph-check-square"></i> Check-list Semana 02</h4>
+                            <ul class="roadmap-list">
+                                <li>CRM configurado com as novas etapas de funil exatas</li>
+                                <li>Integração via API/Webhook disparando eventos primários</li>
+                                <li>Primeira leitura cruzada: Mídia vs Qualificação de Lead</li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-card">
+                            <h4><i class="ph-duotone ph-warning-diamond"></i> Perigo: O que trava o lucro</h4>
+                            <ul class="roadmap-list danger">
+                                <li>Time "esquecendo" de atualizar etapa no CRM em tempo real</li>
+                                <li>Demorar mais de 30 minutos para o primeiro contato (Frio)</li>
+                                <li>Ignorar o feedback do CRM na hora de pausar anúncios</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="roadmap-section" id="automacao">
+
+                    <div class="section-intro">
+                        <span class="week-number">Semana 03</span>
+                        <h2 class="section-main-title">Automação e Handoff (WhatsApp)</h2>
+                        <p class="section-subtitle">Tirando o lead quente da inércia. É hora de colocar o bot no ar para qualificar o volume e apontar 100% do Remarketing para ele.</p>
+                    </div>
+
+                    <div class="bot-workflow-board">
+                        <div class="workflow-header">
+                            <div class="header-title">
+                                <i class="ph-duotone ph-robot"></i>
+                                <h3>Engenharia do Fluxo Mínimo Viável (Bot)</h3>
+                            </div>
+                            <span class="workflow-badge">Máx. 6 Perguntas</span>
+                        </div>
+                        
+                        <div class="workflow-nodes">
+                            <div class="logic-node">
+                                <div class="node-icon"><i class="ph-duotone ph-magnifying-glass"></i></div>
+                                <h4>1. Filtro e Intenção</h4>
+                                <div class="node-steps">
+                                    <span><i class="ph ph-arrow-elbow-down-right"></i> Confirmar interesse da mídia</span>
+                                    <span><i class="ph ph-arrow-elbow-down-right"></i> Perfil de imóvel desejado</span>
+                                    <span><i class="ph ph-arrow-elbow-down-right"></i> Faixa de valor / aluguel ideal</span>
+                                </div>
+                            </div>
+                            
+                            <div class="node-connector"><i class="ph-duotone ph-arrow-right"></i></div>
+
+                            <div class="logic-node">
+                                <div class="node-icon"><i class="ph-duotone ph-calendar-check"></i></div>
+                                <h4>2. Qualificação Final</h4>
+                                <div class="node-steps">
+                                    <span><i class="ph ph-arrow-elbow-down-right"></i> Prazo para avançar (Urgência)</span>
+                                    <span><i class="ph ph-arrow-elbow-down-right"></i> Bairro ou Região de interesse</span>
+                                    <span><i class="ph ph-arrow-elbow-down-right"></i> Intenção de visita ou melhor horário</span>
+                                </div>
+                            </div>
+
+                            <div class="node-connector"><i class="ph-duotone ph-arrow-right"></i></div>
+
+                            <div class="logic-node action-node">
+                                <div class="node-icon"><i class="ph-duotone ph-lightning"></i></div>
+                                <h4>3. Ação & Handoff</h4>
+                                <div class="node-steps">
+                                    <span><i class="ph ph-paper-plane-tilt"></i> Enviar resumo / fotos</span>
+                                    <span class="highlight-step"><i class="ph ph-users"></i> Handoff p/ Corretor Real</span>
+                                    <span><i class="ph ph-database"></i> Atualizar CRM & Evento CAPI</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="metrics-dashboard">
+                        <h3 class="dashboard-title"><i class="ph-duotone ph-chart-bar"></i> Radares de Monitoramento (KPIs)</h3>
+                        <div class="kpi-grid">
+                            <div class="kpi-card">
+                                <i class="ph-duotone ph-chat-centered-text"></i>
+                                <h5>Taxa de Início</h5>
+                                <p>Quantos cliques no anúncio viram a 1ª mensagem real enviada.</p>
+                            </div>
+                            <div class="kpi-card warning-kpi">
+                                <i class="ph-duotone ph-user-minus"></i>
+                                <h5>Taxa de Abandono</h5>
+                                <p>Onde o lead desiste? Se for no meio, o bot está longo ou chato.</p>
+                            </div>
+                            <div class="kpi-card success-kpi">
+                                <i class="ph-duotone ph-check-circle"></i>
+                                <h5>Chegadas ao Handoff</h5>
+                                <p>Volume real de pessoas que terminam o fluxo e pedem corretor.</p>
+                            </div>
+                            <div class="kpi-card danger-kpi">
+                                <i class="ph-duotone ph-timer"></i>
+                                <h5>SLA do Handoff</h5>
+                                <p>O tempo exato que o humano leva para assumir após o bot chamar.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="strategy-banner">
+                        <div class="strategy-content">
+                            <span class="strategy-label">Mudança de Rota — RMKT</span>
+                            <h3>Apontamento Total para o WhatsApp</h3>
+                            <p>A partir desta semana, todo o público quente (Visitantes 30d, Visualizadores de Vídeo 50%+, Leads sem avanço) para de ver formulários e passa a receber <strong>anúncios de retomada e prova social com destino exclusivo para o Bot de WhatsApp.</strong> O orçamento de <strong>R$ 350/sem</strong> se mantém, mas a inteligência muda.</p>
+                        </div>
+                        <div class="strategy-icon">
+                            <i class="ph-duotone ph-whatsapp-logo"></i>
+                        </div>
+                    </div>
+
+                    <div class="footer-grid" style="margin-top: 3rem;">
+                        <div class="checklist-card">
+                            <h4><i class="ph-duotone ph-check-square"></i> Check-list Semana 03</h4>
+                            <ul class="roadmap-list">
+                                <li>Bot de qualificação testado e 100% no ar</li>
+                                <li>Campanha de RMKT apontando o tráfego para o Bot</li>
+                                <li>Handoff testado: corretor recebe notificação clara</li>
+                                <li>CRM recebendo avanço automático após fluxo do bot</li>
+                            </ul>
+                        </div>
+
+                        <div class="warning-card">
+                            <h4><i class="ph-duotone ph-warning-diamond"></i> Perigo: O que trava o lucro</h4>
+                            <ul class="roadmap-list danger">
+                                <li>Bot "interrogador": fazer muitas perguntas antes de entregar valor</li>
+                                <li>Atrasar o handoff: quebra a expectativa de atendimento na hora</li>
+                                <li>Segurar lead qualificado demais no fluxo automático</li>
+                                <li>Confundir "muita conversa iniciada" com "muita oportunidade"</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="roadmap-section" id="consolidacao">
+
+                    <div class="section-intro">
+                        <span class="week-number">Semana 04</span>
+                        <h2 class="section-main-title">Consolidação e Auditoria</h2>
+                        <p class="section-subtitle">Fechar o mês com a máquina funcionando de ponta a ponta. É a hora de analisar a conversão real do funil e preparar o terreno para a escala do Mês 2.</p>
+                    </div>
+
+                    <div class="system-status-board">
+                        <div class="board-header">
+                            <i class="ph-duotone ph-check-circle"></i>
+                            <h3>Status da Operação (Obrigatório Fim do Mês)</h3>
+                        </div>
+                        <div class="status-grid">
+                            <div class="status-item">
+                                <span class="status-led online"></span>
+                                <div class="status-info">
+                                    <strong>Campanhas Frias & RMKT</strong>
+                                    <span>Rodando com verba distribuída</span>
+                                </div>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-led online"></span>
+                                <div class="status-info">
+                                    <strong>Eventos CAPI</strong>
+                                    <span>Lead, Qualified e ScheduleVisit ativos</span>
+                                </div>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-led online"></span>
+                                <div class="status-info">
+                                    <strong>CRM & SLA</strong>
+                                    <span>Time atualizando etapas e handoff veloz</span>
+                                </div>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-led online"></span>
+                                <div class="status-info">
+                                    <strong>Bot de WhatsApp</strong>
+                                    <span>Qualificando e repassando para o humano</span>
+                                </div>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-led online"></span>
+                                <div class="status-info">
+                                    <strong>Exclusões Dinâmicas</strong>
+                                    <span>Removendo clientes fechados e visitas agendadas</span>
+                                </div>
+                            </div>
+                            <div class="status-item">
+                                <span class="status-led online"></span>
+                                <div class="status-info">
+                                    <strong>Padronização de Criativos</strong>
+                                    <span>Guia v2 fechado e rodando sem gargalos visuais</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bento-grid" style="margin-bottom: 3rem;">
+                        <div class="bento-card light-bento" style="border-top: 4px solid var(--primary);">
+                            <div class="bento-header">
+                                <i class="ph-duotone ph-chart-polar"></i>
+                                <h3>Métricas de Avaliação (Fim do Mês)</h3>
+                            </div>
+                            <div class="funnel-metrics-list">
+                                <div class="metric-row">
+                                    <span class="metric-path">Lead <i class="ph ph-arrow-right"></i> Qualified</span>
+                                    <span class="metric-goal">Ideal > 40% (Abaixo de 20% é alerta)</span>
+                                </div>
+                                <div class="metric-row">
+                                    <span class="metric-path">Qualified <i class="ph ph-arrow-right"></i> Visita</span>
+                                    <span class="metric-goal">Analise o handoff e o corretor</span>
+                                </div>
+                                <div class="metric-row">
+                                    <span class="metric-path">Visita <i class="ph ph-arrow-right"></i> Proposta</span>
+                                    <span class="metric-goal">Termômetro do estoque e preço</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bento-card dark-bento">
+                            <div class="bento-header">
+                                <i class="ph-duotone ph-rocket-launch"></i>
+                                <h3>Backlog: Mês 02</h3>
+                            </div>
+                            <p class="bento-text" style="color: rgba(255,255,255,0.8); margin-bottom: 1.5rem;">Ações a serem liberadas apenas quando o Mês 1 estiver sólido.</p>
+                            <ul class="sla-list-premium">
+                                <li style="padding-bottom: 0.75rem;">
+                                    <i class="ph-duotone ph-caret-right" style="color: var(--accent); margin-top: 0.2rem;"></i>
+                                    <div class="sla-desc"><strong>Migrar Otimização</strong><span>Mudar campanha para otimizar por Conversion Leads.</span></div>
+                                </li>
+                                <li style="padding-bottom: 0.75rem;">
+                                    <i class="ph-duotone ph-caret-right" style="color: var(--accent); margin-top: 0.2rem;"></i>
+                                    <div class="sla-desc"><strong>Teste Premium</strong><span>Embate real: Instant Form vs Mensagens Diretas.</span></div>
+                                </li>
+                                <li style="border: none;">
+                                    <i class="ph-duotone ph-caret-right" style="color: var(--accent); margin-top: 0.2rem;"></i>
+                                    <div class="sla-desc"><strong>Comercial Ativo</strong><span>Ligar prospecção oportunista se houver oferta/estoque.</span></div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="data-center-board">
+                        <div class="data-header">
+                            <div class="header-title">
+                                <i class="ph-duotone ph-users-three"></i>
+                                <h3>Engenharia de Públicos & Exclusões</h3>
+                            </div>
+                            <p>O mapeamento exato de ativos do Gerenciador de Anúncios. 30 dias para RMKT principal, 90+ dias para apoio e expansão.</p>
+                        </div>
+
+                        <div class="audience-masonry">
+                            <div class="audience-card">
+                                <h4><i class="ph ph-globe"></i> Retargeting de Site</h4>
+                                <div class="tag-group">
+                                    <span class="aud-tag">Geral <span class="days">30/90d</span></span>
+                                    <span class="aud-tag">Imóveis Venda <span class="days">30/90d</span></span>
+                                    <span class="aud-tag">Locação <span class="days">30/90d</span></span>
+                                    <span class="aud-tag high-intent">Página Contato <span class="days">30d</span></span>
+                                </div>
+                            </div>
+
+                            <div class="audience-card">
+                                <h4><i class="ph ph-instagram-logo"></i> Engajamento Social</h4>
+                                <div class="tag-group">
+                                    <span class="aud-tag">Engajamento IG/FB <span class="days">30/90/180d</span></span>
+                                    <span class="aud-tag">Salvou/Interagiu <span class="days">30d</span></span>
+                                    <span class="aud-tag high-intent">Enviou Direct <span class="days">30d</span></span>
+                                </div>
+                            </div>
+
+                            <div class="audience-card">
+                                <h4><i class="ph ph-play-circle"></i> Visualização de Vídeo</h4>
+                                <div class="tag-group">
+                                    <span class="aud-tag warm">Viu 25% ou 50% <span class="days">30d</span></span>
+                                    <span class="aud-tag high-intent">Viu 75% ou 95% <span class="days">30d</span></span>
+                                    <span class="aud-tag">Por Cluster (Venda/Loc/Premium)</span>
+                                </div>
+                            </div>
+
+                            <div class="audience-card">
+                                <h4><i class="ph ph-database"></i> Sincronização CRM</h4>
+                                <div class="tag-group">
+                                    <span class="aud-tag high-intent">Lead Qualificado <span class="days">30d</span></span>
+                                    <span class="aud-tag high-intent">Visita Agendada <span class="days">30d</span></span>
+                                    <span class="aud-tag danger">Desqualificado <span class="days">30d</span></span>
+                                    <span class="aud-tag danger">Fechado/Cliente <span class="days">180d</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="rmkt-practical-grid">
+                            <div class="rmkt-box">
+                                <h5>RMKT Vendas (Mix)</h5>
+                                <p>Visitantes Venda 30d + View 50% Vídeos Venda + Engajados Venda + Leads sem avanço + Abandono Form.</p>
+                            </div>
+                            <div class="rmkt-box">
+                                <h5>RMKT Locação (Mix)</h5>
+                                <p>Visitantes Locação 30d + View 50% Vídeos Locação + Engajados Locação + Leads sem avanço + Abandono Form.</p>
+                            </div>
+                        </div>
+
+                        <div class="golden-rule-banner">
+                            <div class="golden-icon"><i class="ph-duotone ph-shield-warning"></i></div>
+                            <div class="golden-text">
+                                <strong>A Regra de Ouro das Exclusões</strong>
+                                <p><strong>No tráfego Frio:</strong> Exclua para não pagar duas vezes pelo mesmo lead (ex: Leads 30d, Visitas 60d, Clientes).<br>
+                                <strong>No tráfego Quente (RMKT):</strong> Exclua para não falar besteira para quem já está avançado (ex: Fechados 180d, Desqualificados recentes).</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </section>
+            </div>
+        </main>
+
+        <footer class="roadmap-footer">
+            <div class="container">
+                <p>© 2026 PLACE REAL ESTATE & CO. | Estratégia de Expansão Digital</p>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>
